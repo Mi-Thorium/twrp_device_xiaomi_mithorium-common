@@ -64,6 +64,8 @@ TW_EXTRA_LANGUAGES := true
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 TW_INCLUDE_CRYPTO := true
 
+PLATFORM_VERSION := 16.1.0
+
 TARGET_RECOVERY_DEVICE_MODULES += \
     libxml2 \
     vendor.display.config@1.0 \
