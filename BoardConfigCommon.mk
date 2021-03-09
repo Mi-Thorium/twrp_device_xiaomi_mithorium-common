@@ -70,6 +70,7 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 TARGET_RECOVERY_DEVICE_MODULES += \
+    libandroidicu \
     libxml2 \
     vendor.display.config@1.0 \
     vendor.display.config@2.0
