@@ -5,7 +5,7 @@
 /recovery       emmc    /dev/block/bootdevice/by-name/recovery                  flags=backup=1
 
 # Cache
-/cache          ext4    /dev/block/bootdevice/by-name/cache
+/cache          ext4    /dev/block/bootdevice/by-name/cache                     flags=fsflags="discard"
 
 # Modem
 /firmware       vfat    /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";fsflags="ro";mounttodecrypt
