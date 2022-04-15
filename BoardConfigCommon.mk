@@ -83,6 +83,7 @@ endif
 # TWRP - Crypto - FBE
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
 BOARD_USES_QCOM_FBE_DECRYPTION := true
+TW_USE_FSCRYPT_POLICY := 1
 endif
 
 # TWRP - Crypto - FDE
