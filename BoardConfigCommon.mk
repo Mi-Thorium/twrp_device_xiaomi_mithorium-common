@@ -110,5 +110,7 @@ RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_EXECUTABLES)/strace \
     $(TARGET_OUT_EXECUTABLES)/tombstoned
 
+include $(COMMON_PATH)/BoardConfigSHRP.mk
+
 # Inherit extra if exists
 -include vendor/extra/BoardConfigExtra.mk
