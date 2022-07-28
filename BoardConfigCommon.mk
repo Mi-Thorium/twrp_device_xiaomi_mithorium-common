@@ -53,6 +53,7 @@ TW_THEME := portrait_hdpi
 
 TW_HAS_EDL_MODE := true
 TW_ENABLE_BLKDISCARD := true
+TW_EXCLUDE_APEX := true
 TW_INCLUDE_RESETPROP := true
 
 # TWRP - Debug
