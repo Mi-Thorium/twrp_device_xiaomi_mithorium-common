@@ -8,6 +8,23 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
+# Crypto
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
+MITHORIUM_INCLUDE_CRYPTO := true
+PRODUCT_PACKAGES += qcom_decrypt_fbe
+endif
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FDE),true)
+MITHORIUM_INCLUDE_CRYPTO := true
+endif
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+PRODUCT_PACKAGES += qcom_decrypt
+ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
+MITHOROUM_KEYMASTER_VERSION := 3.0
+else # MITHORIUM_LEGACY_CRYPTO
+MITHOROUM_KEYMASTER_VERSION ?= 4.0
+endif # MITHORIUM_LEGACY_CRYPTO
+endif # MITHORIUM_INCLUDE_CRYPTO
+
 # Debug
 PRODUCT_PACKAGES += \
     crash_dump \

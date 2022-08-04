@@ -60,6 +60,35 @@ TW_INCLUDE_RESETPROP := true
 
 TW_EXTRA_LANGUAGES := true
 
+# TWRP - Crypto
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+TW_INCLUDE_CRYPTO := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libxml2 \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
+endif
+
+# TWRP - Crypto - FBE
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+endif
+
+# TWRP - Crypto - FDE
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FDE),true)
+BOARD_USES_QCOM_DECRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(COMMON_PATH)/cryptfs_hw
+TARGET_HW_DISK_ENCRYPTION := true
+TARGET_RECOVERY_DEVICE_MODULES += libcryptfs_hw
+RECOVERY_LIBRARY_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libcryptfs_hw.so
+endif
+
 # TWRP - Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true

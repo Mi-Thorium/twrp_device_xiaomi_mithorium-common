@@ -1,4 +1,5 @@
 import /init.recovery.device.rc
+import /init.recovery.qcom_decrypt.rc
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
