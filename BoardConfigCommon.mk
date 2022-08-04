@@ -52,6 +52,7 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 
 TW_HAS_EDL_MODE := true
+TW_ENABLE_BLKDISCARD := true
 TW_INCLUDE_RESETPROP := true
 
 # TWRP - Debug
