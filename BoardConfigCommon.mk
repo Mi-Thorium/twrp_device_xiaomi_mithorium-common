@@ -54,3 +54,13 @@ TW_THEME := portrait_hdpi
 # TWRP - Debug
 TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
+
+TARGET_RECOVERY_DEVICE_MODULES += \
+    debuggerd \
+    strace \
+    tombstoned
+
+RECOVERY_BINARY_SOURCE_FILES += \
+    $(TARGET_OUT_EXECUTABLES)/debuggerd \
+    $(TARGET_OUT_EXECUTABLES)/strace \
+    $(TARGET_OUT_EXECUTABLES)/tombstoned
