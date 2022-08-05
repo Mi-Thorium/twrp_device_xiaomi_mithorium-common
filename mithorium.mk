@@ -83,6 +83,31 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qseecomd/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
 endif
 
+# Proprietary - QTI Gatekeeper 1.0
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+ifneq ($(MITHORIUM_LEGACY_CRYPTO),true)
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-gatekeeper-1-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+endif
+endif
+endif
+
+# Proprietary - QTI Keymaster
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+ifneq ($(MITHORIUM_LEGACY_CRYPTO),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-common/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+ifeq ($(MITHOROUM_KEYMASTER_VERSION),3.0)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-3-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+else ifeq ($(MITHOROUM_KEYMASTER_VERSION),4.0)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-4-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+endif
+endif
+endif
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)

@@ -1,0 +1,5 @@
+# PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+
+# QTI Keymaster 3.0 - from PAN
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti:system/bin/android.hardware.keymaster@3.0-service-qti
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so:system/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
