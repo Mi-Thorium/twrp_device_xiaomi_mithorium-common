@@ -108,6 +108,15 @@ endif
 endif
 endif
 
+# Vintf - Keymaster
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+ifeq ($(MITHOROUM_KEYMASTER_VERSION),3.0)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/keymaster-3-0.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest/keymaster-3-0.xml
+else ifeq ($(MITHOROUM_KEYMASTER_VERSION),4.0)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/keymaster-4-0.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest/keymaster-4-0.xml
+endif
+endif
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
