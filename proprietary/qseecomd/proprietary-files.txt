@@ -1,0 +1,19 @@
+# PAN Package version: Nokia/Panther_00WW/PAN_sprout:11/RKQ1.200928.002/00WW_3_240:user/release-keys
+
+# QSEECOMd - from PAN
+vendor/bin/qseecomd:system/bin/qseecomd
+vendor/lib64/libdiag.so:system/lib64/libdiag.so
+vendor/lib64/libdisplayconfig.qti.so:system/lib64/libdisplayconfig.qti.so
+vendor/lib64/libdrmfs.so:system/lib64/libdrmfs.so
+vendor/lib64/libdrmtime.so:system/lib64/libdrmtime.so
+vendor/lib64/libGPreqcancel.so:system/lib64/libGPreqcancel.so
+vendor/lib64/libGPreqcancel_svc.so:system/lib64/libGPreqcancel_svc.so
+vendor/lib64/libqisl.so:system/lib64/libqisl.so
+vendor/lib64/libQSEEComAPI.so:system/lib64/libQSEEComAPI.so
+vendor/lib64/librpmb.so:system/lib64/librpmb.so
+vendor/lib64/libsecureui.so:system/lib64/libsecureui.so
+vendor/lib64/libsecureui_svcsock.so:system/lib64/libsecureui_svcsock.so
+vendor/lib64/libssd.so:system/lib64/libssd.so
+vendor/lib64/libStDrvInt.so:system/lib64/libStDrvInt.so
+vendor/lib64/libtime_genoff.so:system/lib64/libtime_genoff.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so:system/lib64/vendor.qti.hardware.tui_comm@1.0.so
