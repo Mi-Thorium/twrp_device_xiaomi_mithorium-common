@@ -108,3 +108,6 @@ RECOVERY_BINARY_SOURCE_FILES += \
     $(TARGET_OUT_EXECUTABLES)/debuggerd \
     $(TARGET_OUT_EXECUTABLES)/strace \
     $(TARGET_OUT_EXECUTABLES)/tombstoned
+
+# Inherit extra if exists
+-include vendor/extra/BoardConfigExtra.mk

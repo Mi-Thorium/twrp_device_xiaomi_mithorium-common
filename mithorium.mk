@@ -120,3 +120,6 @@ endif
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
+
+# Inherit extra if exists
+$(call inherit-product-if-exists, vendor/extra/product.mk)
