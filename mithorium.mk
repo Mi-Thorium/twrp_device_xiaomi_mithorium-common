@@ -59,6 +59,24 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.keymaster@3.0-impl.so
 endif
 
+# Proprietary - Gatekeeper
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/gatekeeper/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+endif
+endif
+endif
+
+# Proprietary - Keystore
+ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
+ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/keystore/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
+endif
+endif
+
 # Proprietary - QSEECOMd
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 PRODUCT_COPY_FILES += \

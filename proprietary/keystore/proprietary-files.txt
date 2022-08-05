@@ -1,0 +1,4 @@
+# olive Package version: Xiaomi/olive/olive:10/QKQ1.191014.001/V12.5.5.0.QCNCNXM:user/release-keys
+
+# Keystore - from olive
+vendor/lib64/hw/keystore.msm8937.so:system/lib64/hw/keystore.default.so
