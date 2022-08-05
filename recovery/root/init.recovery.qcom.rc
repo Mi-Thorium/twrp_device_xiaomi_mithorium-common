@@ -1,6 +1,9 @@
 import /init.recovery.device.rc
 import /init.recovery.qcom_decrypt.rc
 
+on init
+    exec u:r:recovery:s0 -- /system/bin/resetprop ro.boot.verifiedbootstate orange
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
