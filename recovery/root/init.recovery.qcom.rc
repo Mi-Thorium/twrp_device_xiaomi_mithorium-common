@@ -16,3 +16,6 @@ on boot
     start keymaster-3-0
     start keymaster-3-0-qti
     start keymaster-4-0-qti
+
+on boot
+    start health-hal-2-1
