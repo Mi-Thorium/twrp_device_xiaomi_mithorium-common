@@ -3,6 +3,7 @@ import /init.recovery.qcom_decrypt.rc
 
 on init
     exec u:r:recovery:s0 -- /system/bin/resetprop ro.boot.verifiedbootstate orange
+    mount none /system/etc /etc bind
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
