@@ -48,7 +48,7 @@ SHRP_REC := /dev/block/bootdevice/by-name/recovery
 
 # Emergency DownLoad mode (0 = no EDL mode, 1 = EDL mode available)
 # Default (if not set): 0
-SHRP_EDL_MODE := 0
+SHRP_EDL_MODE := 1
 
 # internal storage path
 # Default (if not set): /sdcard
@@ -56,7 +56,7 @@ SHRP_INTERNAL := /sdcard
 
 # If your device has an external sdcard
 # Default (if not set): /
-SHRP_EXTERNAL := /external_sd
+SHRP_EXTERNAL := /sdcard1
 
 # USB OTG path
 # Default (if not set): /
@@ -158,7 +158,7 @@ SHRP_NO_SAR_AUTOMOUNT := true
 # Default (if not set) is NOT adding it to the ramdisk but internal storage.
 # To store this addon into the recovery ramdisk instead set to "true" here.
 # Ensure you understood the above note on the default behavior!
-INC_IN_REC_ADDON_1 := true
+#INC_IN_REC_ADDON_1 := true
 
 # Addon - Substratum Overlay (OMS -legacy- disabler)
 # Default (if not set) is not skipping this addon (i.e. add it)
@@ -167,7 +167,7 @@ INC_IN_REC_ADDON_1 := true
 # Default (if not set) is NOT adding it to the ramdisk but internal storage.
 # To store this addon into the recovery ramdisk instead set to "true" here.
 # Ensure you understood the above note on the default behavior!
-INC_IN_REC_ADDON_2 := true
+#INC_IN_REC_ADDON_2 := true
 
 # Addon - Clear Fingerprint (remove fingerprint lock from system)
 # Default (if not set) is not skipping this addon (i.e. add it)
@@ -176,7 +176,7 @@ INC_IN_REC_ADDON_2 := true
 # Default (if not set) is NOT adding it to the ramdisk but internal storage.
 # To store this addon into the recovery ramdisk instead set to "true" here.
 # Ensure you understood the above note on the default behavior!
-INC_IN_REC_ADDON_3 := true
+#INC_IN_REC_ADDON_3 := true
 
 # Addon - Force Encryption (remove force encryption from your device)
 # Default (if not set) is not skipping this addon (i.e. add it)
@@ -185,13 +185,13 @@ INC_IN_REC_ADDON_3 := true
 # Default (if not set) is NOT adding it to the ramdisk but internal storage.
 # To store this addon into the recovery ramdisk instead set to "true" here.
 # Ensure you understood the above note on the default behavior!
-INC_IN_REC_ADDON_4 := true
+#INC_IN_REC_ADDON_4 := true
 
 
 # Default (if not set) is NOT adding it to the ramdisk but internal storage.
 # To store magisk zip into the recovery ramdisk instead set to "true" here.
 # Ensure you understood the above note on the default behavior!
-INC_IN_REC_MAGISK := true
+#INC_IN_REC_MAGISK := true
 
 # Default (if not set) will show magisk root and unroot option inside the recovery.
 # To hide the prebuilt magisk flash option from recovery, set value to "true".
