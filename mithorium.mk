@@ -34,6 +34,11 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/system/apex/com.android.runtime/bin/crash_dump32:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/crash_dump32 \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/system/apex/com.android.runtime/bin/crash_dump64:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/crash_dump64
 
+# Fstab
+ifneq ($(MITHORIUM_USES_DEVICE_SPECIFIC_FSTAB),true)
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/fstab/,$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/)
+endif
+
 # Gatekeeper
 ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO_FBE),true)
