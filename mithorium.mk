@@ -66,6 +66,9 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.keymaster@3.0-impl.so
 endif
 
+# Proprietary - BEGIN
+ifneq ($(MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS),true)
+
 # Proprietary - Gatekeeper
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
@@ -114,6 +117,9 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 endif
+
+# Proprietary - END
+endif # MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS
 
 # Vintf - Keymaster
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
