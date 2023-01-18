@@ -21,9 +21,9 @@ endif
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 PRODUCT_PACKAGES += qcom_decrypt
 ifeq ($(MITHORIUM_LEGACY_CRYPTO),true)
-MITHOROUM_KEYMASTER_VERSION := 3.0
+MITHORIUM_KEYMASTER_VERSION := 3.0
 else # MITHORIUM_LEGACY_CRYPTO
-MITHOROUM_KEYMASTER_VERSION ?= 4.0
+MITHORIUM_KEYMASTER_VERSION ?= 4.0
 endif # MITHORIUM_LEGACY_CRYPTO
 endif # MITHORIUM_INCLUDE_CRYPTO
 
@@ -108,10 +108,10 @@ ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 ifneq ($(MITHORIUM_LEGACY_CRYPTO),true)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-common/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-ifeq ($(MITHOROUM_KEYMASTER_VERSION),3.0)
+ifeq ($(MITHORIUM_KEYMASTER_VERSION),3.0)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-3-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
-else ifeq ($(MITHOROUM_KEYMASTER_VERSION),4.0)
+else ifeq ($(MITHORIUM_KEYMASTER_VERSION),4.0)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/proprietary/qti-keymaster-4-0/system/,$(TARGET_COPY_OUT_RECOVERY)/root/system/)
 endif
@@ -123,9 +123,9 @@ endif # MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS
 
 # Vintf - Keymaster
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
-ifeq ($(MITHOROUM_KEYMASTER_VERSION),3.0)
+ifeq ($(MITHORIUM_KEYMASTER_VERSION),3.0)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/keymaster-3-0.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest/keymaster-3-0.xml
-else ifeq ($(MITHOROUM_KEYMASTER_VERSION),4.0)
+else ifeq ($(MITHORIUM_KEYMASTER_VERSION),4.0)
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/keymaster-4-0.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest/keymaster-4-0.xml
 endif
 endif
