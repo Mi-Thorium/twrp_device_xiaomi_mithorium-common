@@ -26,5 +26,5 @@
 /splash         emmc    /dev/block/bootdevice/by-name/splash                    flags=display="Splash";backup=1;flashimg=1
 
 # Removable storage
-/sdcard1        auto    /dev/block/mmcblk1p1                                    flags=display="MicroSD";removable;storage;wipeingui
-/usb_otg        auto    /dev/block/sda1             /dev/block/sda              flags=display="USB OTG";removable;storage;wipeingui
+/sdcard1        auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1p4            flags=display="MicroSD";removable;storage;wipeingui
+/usb_otg        auto    /dev/block/sda1         /dev/block/sda4                 flags=display="USB OTG";removable;storage;wipeingui
