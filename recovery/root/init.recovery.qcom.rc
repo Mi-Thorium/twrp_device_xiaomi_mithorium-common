@@ -1,7 +1,27 @@
 import /init.recovery.device.rc
 import /init.recovery.qcom_decrypt.rc
 
+service play-audio /system/bin/tinyplay ${audio.play_wav_file}
+    user root
+    group root
+    seclabel u:r:recovery:s0
+    oneshot
+    disabled
+
+on property:init.svc.play-audio=stopped
+    setprop audio.enable 0
+
+on property:adsp.boot=1 && property:audio.mute=1
+    stop play-audio
+
+on property:adsp.boot=1 && property:audio.mute=0 && property:audio.play_wav_file=*
+    setprop audio.enable 1
+
+on property:adsp.boot=1 && property:audio.mute=0 && property:audio.play_wav_file=* && property:audio.ready=1
+    start play-audio
+
 on init
+    setprop audio.mute 0
     exec u:r:recovery:s0 -- /system/bin/resetprop ro.boot.verifiedbootstate orange
 
 on fs
@@ -20,6 +40,7 @@ on boot
     start keymaster-4-0-qti
 
 on boot
+    setprop audio.enable 0
     start health-hal-2-1
 
 on boot
