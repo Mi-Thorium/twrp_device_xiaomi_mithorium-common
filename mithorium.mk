@@ -66,6 +66,10 @@ PRODUCT_COPY_FILES += \
     $(OUT_DIR)/target/product/$(PRODUCT_RELEASE_NAME)/vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/hw/android.hardware.keymaster@3.0-impl.so
 endif
 
+# LED
+PRODUCT_PACKAGES += \
+    charger_led
+
 # Proprietary - BEGIN
 ifneq ($(MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS),true)
 

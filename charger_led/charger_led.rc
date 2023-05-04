@@ -1,0 +1,6 @@
+service charger_led /system/bin/charger_led
+    user root
+    group root
+    stdio_to_kmsg
+    oneshot
+    seclabel u:r:recovery:s0
