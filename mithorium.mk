@@ -128,7 +128,11 @@ endif
 endif # MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS
 
 # Vintf
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/manifest_tl5.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest.xml
+else
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest.xml
+endif
 
 # Vintf - Keymaster
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
