@@ -127,6 +127,9 @@ endif
 # Proprietary - END
 endif # MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS
 
+# Vintf
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/vintf/manifest.xml:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/vintf/manifest.xml
+
 # Vintf - Keymaster
 ifeq ($(MITHORIUM_INCLUDE_CRYPTO),true)
 ifeq ($(MITHORIUM_KEYMASTER_VERSION),3.0)
