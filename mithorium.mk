@@ -8,6 +8,12 @@
 TARGET_USES_XIAOMI_MITHORIUM_COMMON_TREE := true
 MITHORIUM_PROPRIETARY_FILES_DIR ?= $(LOCAL_PATH)/proprietary
 
+ifeq ($(TARGET_KERNEL_VERSION),4.19)
+ifneq ($(wildcard device/xiaomi/mithorium-common-4.19/proprietary/),)
+MITHORIUM_PROPRIETARY_FILES_DIR := device/xiaomi/mithorium-common-4.19/proprietary
+endif
+endif
+
 # Inherit AOSP product makefiles
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
