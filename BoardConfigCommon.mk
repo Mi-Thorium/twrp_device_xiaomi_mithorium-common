@@ -28,7 +28,7 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci androidboot.usbconfigfs=true loop.max_part=7
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 firmware_class.path=/system/etc/firmware printk.devkmsg=on
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.mode=recovery androidboot.selinux=permissive
 ifeq ($(TARGET_KERNEL_VERSION),4.19)
 BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78B0000
 else
