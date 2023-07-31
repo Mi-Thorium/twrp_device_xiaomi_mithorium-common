@@ -83,6 +83,9 @@ endif
 PRODUCT_PACKAGES += \
     charger_led
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/charger_led/charger_led.rc:$(TARGET_COPY_OUT_RECOVERY)/root/system/etc/init/charger_led.rc
+
 # Proprietary - BEGIN
 ifneq ($(MITHORIUM_USES_DEVICE_SPECIFIC_BLOBS),true)
 

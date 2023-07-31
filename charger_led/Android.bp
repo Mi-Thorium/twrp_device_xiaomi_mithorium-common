@@ -10,6 +10,5 @@ cc_binary {
     srcs: [
         "main.c",
     ],
-    init_rc: ["charger_led.rc"],
     recovery: true,
 }
