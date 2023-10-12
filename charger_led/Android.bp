@@ -6,6 +6,7 @@ cc_binary {
         "-Werror",
         "-Wunused",
     ],
+    shared_libs: ["libcutils"],
     srcs: [
         "main.c",
     ],
