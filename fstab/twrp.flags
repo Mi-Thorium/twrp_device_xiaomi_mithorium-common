@@ -8,22 +8,22 @@
 /cache          ext4    /dev/block/bootdevice/by-name/cache                     flags=fsflags="discard"
 
 # Modem
-/firmware       vfat    /dev/block/bootdevice/by-name/modem                     flags=display="Firmware";fsflags="ro";mounttodecrypt
-/modem          emmc    /dev/block/bootdevice/by-name/modem                     flags=display="Modem";backup=1
-/dsp            emmc    /dev/block/bootdevice/by-name/dsp                       flags=subpartitionof=/modem;backup=1
+/firmware       vfat    /dev/block/platform/soc/7824900.sdhci/by-name/modem     flags=display="Firmware";fsflags="ro";mounttodecrypt
+/modem          emmc    /dev/block/platform/soc/7824900.sdhci/by-name/modem     flags=display="Modem";backup=1
+/dsp            emmc    /dev/block/platform/soc/7824900.sdhci/by-name/dsp       flags=subpartitionof=/modem;backup=1
 
 # EFS
-/efs1           emmc    /dev/block/bootdevice/by-name/modemst1                  flags=backup=1;display="EFS"
-/efs2           emmc    /dev/block/bootdevice/by-name/modemst2                  flags=backup=1;subpartitionof=/efs1
-/efsc           emmc    /dev/block/bootdevice/by-name/fsc                       flags=backup=1;subpartitionof=/efs1
-/efsg           emmc    /dev/block/bootdevice/by-name/fsg                       flags=backup=1;subpartitionof=/efs1
+/efs1           emmc    /dev/block/platform/soc/7824900.sdhci/by-name/modemst1  flags=backup=1;display="EFS"
+/efs2           emmc    /dev/block/platform/soc/7824900.sdhci/by-name/modemst2  flags=backup=1;subpartitionof=/efs1
+/efsc           emmc    /dev/block/platform/soc/7824900.sdhci/by-name/fsc       flags=backup=1;subpartitionof=/efs1
+/efsg           emmc    /dev/block/platform/soc/7824900.sdhci/by-name/fsg       flags=backup=1;subpartitionof=/efs1
 
 # Persist
-/persist        ext4    /dev/block/bootdevice/by-name/persist                   flags=display="Persist";fsflags="ro"
-/persist_image  emmc    /dev/block/bootdevice/by-name/persist                   flags=display="Persist";backup=1;flashimg=1
+/persist        ext4    /dev/block/platform/soc/7824900.sdhci/by-name/persist   flags=display="Persist";fsflags="ro"
+/persist_image  emmc    /dev/block/platform/soc/7824900.sdhci/by-name/persist   flags=display="Persist";backup=1;flashimg=1
 
 # Splash
-/splash         emmc    /dev/block/bootdevice/by-name/splash                    flags=display="Splash";backup=1;flashimg=1
+/splash         emmc    /dev/block/platform/soc/7824900.sdhci/by-name/splash    flags=display="Splash";backup=1;flashimg=1
 
 # Removable storage
 /sdcard1        auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1p4            flags=display="MicroSD";removable;storage;wipeingui
